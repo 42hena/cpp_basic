@@ -1,8 +1,5 @@
 #include "Zombie.hpp"
 #include <iostream>
-Zombie::Zombie()
-{
-}
 
 Zombie::Zombie(std::string name)
 {
@@ -12,10 +9,10 @@ Zombie::Zombie(std::string name)
 
 void Zombie::announce(void)
 {
-    std::cout << "<" << name << "> BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie::~Zombie()
+Zombie::~Zombie(void)
 {
     std::cout << "<" << name << "> died..." << std::endl;
 }
