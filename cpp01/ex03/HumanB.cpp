@@ -18,5 +18,11 @@ void HumanB::setWeapon(Weapon &weapon)
 
 void HumanB::attack(void)
 {
-    std::cout << name << "attacks with their" << weapon->getType() << std::endl;
+    std::string tmp;
+
+    tmp = weapon->getType();
+    if (tmp == "")
+        std::cout << name << "attacks with their" << weapon->getType() << std::endl;
+    else
+        std::cout << "empty" << std::endl;
 }

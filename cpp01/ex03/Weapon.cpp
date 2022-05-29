@@ -1,5 +1,7 @@
-#include "Weapon.hpp"
 #include <iostream>
+
+#include "Weapon.hpp"
+
 Weapon::Weapon(const std::string& type) 
     : type(type)
 { 
