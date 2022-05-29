@@ -1,19 +1,19 @@
-CC          = c++
-CFLAGS      = -Wall -Werror -Wextra -std=c++98
+CXX			= c++
+CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM          = rm -f
 
-NAME        = MoarBrainz
-SRC         = Zombie.cpp	\
-				zombieHorde.cpp	\
-				main.cpp \
+NAME        = Moarbrainz
+SRC         = main.cpp 				\
+				Zombie.cpp			\
+				zombieHorde.cpp  	\
 
 OBJ         = $(SRC:.cpp=.o)
 
 %.o         : %.cpp
-	$(CC) $(CFLAGS) -o $@ -c $<
+		$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 $(NAME)     : $(OBJ)
-		$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+		$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 .PHONY      : all
 all         : $(NAME)
