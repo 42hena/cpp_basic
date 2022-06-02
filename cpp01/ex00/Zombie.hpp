@@ -9,9 +9,13 @@ private:
 	std::string name;
 
 public:
+	// 생성자
 	Zombie(std::string name);
 
+	// 소멸자
 	~Zombie(void);
+
+	// 멤버 함수
 	void announce(void);
 };
 
