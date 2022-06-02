@@ -1,5 +1,6 @@
-#include "Harl.hpp"
 #include <iostream>
+
+#include "Harl.hpp"
 
 void Harl::nomating()
 {
@@ -30,7 +31,7 @@ void Harl::warning()
 
 void Harl::error()
 {
-    std::cout << "\"ERROR\"" << std::endl;
+    std::cout << "[ ERROR ]" << std::endl;
     std::cout << "This is unacceptable!" << std::endl;
     std::cout << "I want to speak to the manager now." << std::endl;
 }
@@ -74,6 +75,7 @@ void Harl::complain(std::string level)
         (this->*(f[3]))();
     case 4:
         (this->*(f[4]))();
+    default:
         break;
     }
 }

@@ -1,6 +1,7 @@
-#include "Harl.hpp"
-#include <string>
 #include <iostream>
+
+#include "Harl.hpp"
+
 int main(int argc, char **argv)
 {
 	Harl harl;
