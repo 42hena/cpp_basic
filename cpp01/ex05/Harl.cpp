@@ -1,5 +1,6 @@
-#include "Harl.hpp"
 #include <iostream>
+
+#include "Harl.hpp"
 
 void Harl::debug()
 {
