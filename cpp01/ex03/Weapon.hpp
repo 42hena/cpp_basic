@@ -10,7 +10,9 @@ private:
 
 public:
 	// 생성자
+	Weapon(void);
 	Weapon(const std::string &type);
+	
 	// 소멸자
 	~Weapon(void);
 
