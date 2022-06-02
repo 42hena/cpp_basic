@@ -57,6 +57,8 @@ int main(int argc, char **argv)
 		std::string file(argv[1]);
 		std::string from(argv[2]);
 		std::string to(argv[3]);
+		if (!from.size())
+			return 0;
 		run_process(file, from, to);
 	}
 }
