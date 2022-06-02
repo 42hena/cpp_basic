@@ -2,10 +2,15 @@
 
 #include "Weapon.hpp"
 
+Weapon::Weapon() 
+    : type("")
+{ 
+    std::cout << "Weapon constructor1" << std::endl;
+}
 Weapon::Weapon(const std::string& type) 
     : type(type)
 { 
-    std::cout << "Weapon constructor" << std::endl;
+    std::cout << "Weapon constructor2" << std::endl;
 }
 
 Weapon::~Weapon(void)
