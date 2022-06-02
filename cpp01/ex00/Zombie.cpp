@@ -1,10 +1,10 @@
-#include "Zombie.hpp"
 #include <iostream>
+
+#include "Zombie.hpp"
 
 Zombie::Zombie(std::string name)
 {
     this->name = name;
-    std::cout << "<" << name << "> create..." << std::endl;
 }
 
 void Zombie::announce(void)
@@ -14,5 +14,5 @@ void Zombie::announce(void)
 
 Zombie::~Zombie(void)
 {
-    std::cout << "<" << name << "> died..." << std::endl;
+    std::cout << name << ": died..." << std::endl;
 }
