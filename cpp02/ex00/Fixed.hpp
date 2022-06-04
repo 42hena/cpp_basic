@@ -11,14 +11,14 @@ public:
 	// 생성자
 	Fixed(void);
 
+	// 소멸자
+	~Fixed(void);
+
 	// 복사 생성자
 	Fixed(const Fixed &copy);
 
 	// 복사 대입 연산자
 	Fixed& operator=(const Fixed &copy);
-
-	// 소멸자
-	~Fixed(void);
 
 	// getter, setter
 	int getRawBits(void) const;
