@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 #include "Fixed.hpp"
 
@@ -6,26 +7,26 @@ const int Fixed::fractionalBit = 8;
 
 // default 생성자
 Fixed::Fixed(void)
+    : fixedPoint(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-    this->fixedPoint = 0;
 }
 
+// 생성자
 Fixed::Fixed(const int integer)
+    : fixedPoint(integer * (1 << this->fractionalBit))
 {
 	std::cout << "Int constructor called" << std::endl;
-    this->fixedPoint = integer * (1 << this->fractionalBit);
 }
 
 Fixed::Fixed(const float floatPoint)
+    : fixedPoint(roundf(floatPoint * (1 << this->fractionalBit)))
 {
 	std::cout << "Float constructor called" << std::endl;
-    this->fixedPoint = floatPoint * (1 << this->fractionalBit);
 }
 
-// copy 생성자
+// 복사 생성자
 Fixed::Fixed(const Fixed &copy)
-    // : fixedPoint(copy.fixedPoint)
 {
     std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
@@ -69,8 +70,8 @@ int Fixed::toInt(void) const
 }
 
 // << 오버로딩
-std::ostream& operator<<(std::ostream& outputStream, const Fixed& A)
+std::ostream& operator<<(std::ostream& outputStream, const Fixed& fixed)
 {
-    std::cout << (float)A.getRawBits() / (1 << 8);
+    std::cout << fixed.toFloat();
     return outputStream;
 }
