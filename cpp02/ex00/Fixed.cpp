@@ -11,7 +11,7 @@ Fixed::Fixed(void)
     this->fixedPoint = 0;
 }
 
-// copy 생성자
+// 복사 생성자
 Fixed::Fixed(const Fixed &copy)
 {
     std::cout << "Copy constructor called" << std::endl;
