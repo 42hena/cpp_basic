@@ -3,27 +3,63 @@
 #include "ClapTrap.hpp"
 
 
-// 기본 생성자
+// default 생성자
 ClapTrap::ClapTrap(void)
 	: name("NoName"), hitPoint(10), energyPoint(10), attackDamage(0)
 {
-	std::cout << "ClapTrap Class Default Constructor" << std::endl;
+	std::cout << "ClapTrap Class " << name << " Default Constructor" << std::endl;
 }
 
-// 생성자
+// 생성자 오버로딩
 ClapTrap::ClapTrap(std::string name)
 	: name(name), hitPoint(10), energyPoint(10), attackDamage(0)
 {
-	std::cout << "ClapTrap Class One Parameter(string) Constructor" << std::endl;
+	std::cout << "ClapTrap Class " << name << " Constructor" << std::endl;
 }
 
-
-// 소멸자
+// default 소멸자
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << "ClapTrap Class " << name << " Default Destructor" << std::endl;
 }
 
+// 복사 생성자
+ClapTrap::ClapTrap(const ClapTrap& copy)
+{
+	*this = copy;
+}
+
+// 복사 대입 연산자
+ClapTrap& ClapTrap::operator=(const ClapTrap &copy)
+{
+	name = copy.getName();
+	hitPoint = copy.getHitPoint();
+	energyPoint = copy.getEnergyPoint();
+	attackDamage = copy.getAttackDamage();
+
+	return *this;
+}
+
+// getter setter
+std::string	ClapTrap::getName(void) const
+{
+	return this->name;
+}
+
+unsigned	ClapTrap::getHitPoint(void) const
+{
+	return this->hitPoint;
+}
+
+unsigned	ClapTrap::getEnergyPoint(void) const
+{
+	return this->energyPoint;
+}
+
+int		ClapTrap::getAttackDamage(void) const
+{
+	return this->attackDamage;
+}
 
 // 멤버 함수
 void ClapTrap::attack(const std::string &target)
@@ -69,7 +105,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	else if (!energyPoint)
 	{
-		std::cout << "ClapTrap " << this->name << " can't repair myself, because no energyPoint." << std::endl;
+		std::cout << "ClapTrap " << name << " can't repair myself, because no energyPoint." << std::endl;
 	}
 	else
 	{
