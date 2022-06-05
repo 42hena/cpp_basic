@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap Class Default Destructor" << std::endl;    
+    std::cout << "ScavTrap Class " << name << " Default Destructor" << std::endl;    
 }
 
 void ScavTrap::guardGate(void)

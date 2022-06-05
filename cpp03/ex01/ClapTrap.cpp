@@ -2,24 +2,28 @@
 
 #include "ClapTrap.hpp"
 
-// 생성자
+
+// 기본 생성자
 ClapTrap::ClapTrap(void)
-	: name("hena"), hitPoint(10), energyPoint(10), attackDamage(0)
+	: name("NoName"), hitPoint(10), energyPoint(10), attackDamage(0)
 {
 	std::cout << "ClapTrap Class Default Constructor" << std::endl;
 }
 
+// 생성자
 ClapTrap::ClapTrap(std::string name)
 	: name(name), hitPoint(10), energyPoint(10), attackDamage(0)
 {
 	std::cout << "ClapTrap Class One Parameter(string) Constructor" << std::endl;
 }
 
+
 // 소멸자
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap Class Default Destructor" << std::endl;
+	std::cout << "ClapTrap Class " << name << " Default Destructor" << std::endl;
 }
+
 
 // 멤버 함수
 void ClapTrap::attack(const std::string &target)
@@ -50,7 +54,6 @@ void ClapTrap::takeDamage(unsigned int amount)
 			hitPoint -= amount;
 			std::cout << "ClapTrap " << name << "'s hit points is now " << hitPoint << std::endl;
 		}
-		--energyPoint;
 	}
 	else
 	{
@@ -60,23 +63,18 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (energyPoint && hitPoint)
+	if (!hitPoint)
+	{
+		std::cout << "ClapTrap " << name << " died. So can't repaired" << std::endl;		
+	}
+	else if (!energyPoint)
+	{
+		std::cout << "ClapTrap " << this->name << " can't repair myself, because no energyPoint." << std::endl;
+	}
+	else
 	{
 		hitPoint += amount;
 		std::cout << "ClapTrap " << name << " has been repaired of " << amount << " hit points. It has now " << energyPoint << " energy points, and " << hitPoint << " hit points." << std::endl;
 		--energyPoint;
 	}
-	else if (!hitPoint)
-	{
-		std::cout << "ClapTrap " << name << " died" << std::endl;		
-	}
-	else
-	{
-		std::cout << "ClapTrap " << this->name << " can't repair myself, because no energyPoint." << std::endl;
-	}
-	
 }
-
-// 복사 생성자
-
-// 복사 대입 생성자

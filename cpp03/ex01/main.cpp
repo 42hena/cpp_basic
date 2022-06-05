@@ -5,5 +5,9 @@
 
 int main(void)
 {
-    ScavTrap C("test");
+    ScavTrap teacher("donghyki");
+    ClapTrap student("hena");
+
+    teacher.attack("hena");
+    student.takeDamage(20);
 }
