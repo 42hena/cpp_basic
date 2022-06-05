@@ -9,5 +9,5 @@ int main(void)
     ClapTrap student("hena");
 
     teacher.attack("hena");
-    student.takeDamage(20);
+    student.takeDamage(teacher.getAttackDamage());
 }

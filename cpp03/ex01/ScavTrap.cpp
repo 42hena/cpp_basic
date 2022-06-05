@@ -2,12 +2,14 @@
 
 #include "ScavTrap.hpp"
 
+// default 생성자
 ScavTrap::ScavTrap(void)
     : ClapTrap("hena")
 {
     std::cout << "ScavTrap Class Default Constructor" << std::endl;
 }
 
+// 생성자
 ScavTrap::ScavTrap(std::string name)
     : ClapTrap(name)
 {
@@ -17,11 +19,13 @@ ScavTrap::ScavTrap(std::string name)
     std::cout << "ScavTrap Class Default Constructor" << std::endl;
 }
 
+// default 소멸자
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap Class " << name << " Default Destructor" << std::endl;    
 }
 
+// 멤버 함수
 void ScavTrap::attack(const std::string &target)
 {
 	if (!hitPoint)
@@ -34,7 +38,6 @@ void ScavTrap::attack(const std::string &target)
 		--energyPoint;
 	}
 }
-
 
 void ScavTrap::guardGate(void)
 {
