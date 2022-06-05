@@ -2,29 +2,50 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( std::string name)
-    : ClapTrap(name) {
+// 기본 생성자
+FragTrap::FragTrap(void)
+	: ClapTrap("NoName")
+{
 	hitPoint = 100;
 	energyPoint = 100;
 	attackDamage = 30;
-    std::cout << "FragTrap Class Default Constructor" << std::endl;
+	std::cout << "FragTrap Class "<< name << " Default Constructor" << std::endl;
 }
 
+// 생성자
+FragTrap::FragTrap(std::string name)
+	: ClapTrap(name)
+{
+	hitPoint = 100;
+	energyPoint = 100;
+	attackDamage = 30;
+	std::cout << "FragTrap Class "<< name << " Constructor" << std::endl;
+}
+
+// 소멸자
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap " << name << " has been destroyed." << std::endl;
+	std::cout << "FragTrap Class " << name << " Default Destructor" << std::endl;    
 }
 
-FragTrap&	FragTrap::operator=( FragTrap const& frag) {
-	ClapTrap::operator=(frag);
-	std::cout << "FragTrap " << this->Name << " operator= is called" << std::endl;
-	return *this;
+// 복사 생성자
+FragTrap::FragTrap(const FragTrap& copy)
+{
+	
 }
 
-void	FragTrap::highFivesGuys(void) {
-	if(this->energy)
-		std::cout << "FragTrap " << this->Name << " asks for a positive high-five" << std::endl;
+// 복사 대입 연산자
+FragTrap &FragTrap::operator=(FragTrap const &frag)
+{
+	
+}
+
+
+
+void FragTrap::highFivesGuys(void)
+{
+	if (!hitPoint)
+		std::cout << "FragTrap " << name << " asks for a positive high-five" << std::endl;
 	else
-		std::cout << "FragTrap " << this->Name << " can't ask for a positive high-five because " << this->Name << " is dead" << std::endl;
-
+		std::cout << "FragTrap " << name << " can't ask for a positive high-five because " << name << " is dead" << std::endl;
 }

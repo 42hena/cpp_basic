@@ -3,13 +3,22 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
-	public:
-		FragTrap();
-		FragTrap( std::string name);
-		~FragTrap();
-		FragTrap&	operator=( FragTrap const& frag);
-		void	highFivesGuys(void);
+class FragTrap : public ClapTrap
+{
+public:
+	// 생성자
+	FragTrap();
+	FragTrap(std::string name);
+
+	// 소멸자
+	~FragTrap();
+
+	// 복사 생성자
+	FragTrap(const FragTrap& copy);
+
+	// 복사 대입 연산자
+	FragTrap &operator=(FragTrap const &frag);
+	void highFivesGuys(void);
 };
 
 #endif
