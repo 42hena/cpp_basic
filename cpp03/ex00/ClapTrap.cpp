@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap Class Default Destructor" << std::endl;
+	std::cout << "ClapTrap Class " << name << " Default Destructor" << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
