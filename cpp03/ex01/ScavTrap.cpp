@@ -22,6 +22,20 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap Class " << name << " Default Destructor" << std::endl;    
 }
 
+void ScavTrap::attack(const std::string &target)
+{
+	if (!hitPoint)
+		std::cout << "ScavTrap " << name << " can't attacks " << target << ", because no hitPoint." << std::endl;
+	else if (!energyPoint)
+		std::cout << "ScavTrap " << name << " can't attacks " << target << ", because no energyPoint." << std::endl;
+	else
+	{
+		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+		--energyPoint;
+	}
+}
+
+
 void ScavTrap::guardGate(void)
 {
     if (hitPoint)

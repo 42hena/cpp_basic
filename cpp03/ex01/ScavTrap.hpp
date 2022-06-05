@@ -12,5 +12,6 @@ public:
 	// 소멸자
 	~ScavTrap(void);
 
-	void guardGate(void);
+	void	attack(const std::string &target);
+	void	guardGate(void);
 };
