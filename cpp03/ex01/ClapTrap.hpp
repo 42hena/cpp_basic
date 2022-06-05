@@ -5,7 +5,7 @@
 
 class ClapTrap
 {
-protected:
+private:
 	std::string		name;
 	unsigned int	hitPoint;
 	unsigned int	energyPoint;
@@ -22,7 +22,13 @@ public:
 	ClapTrap(const ClapTrap& copy);
 
 	// 복사 대입 연산자
-	ClapTrap&	operator=(ClapTrap const& copy);
+	ClapTrap&	operator=(const ClapTrap &copy);
+
+	// getter
+	std::string	getName(void)			const;
+	unsigned	getHitPoint(void)		const;
+	unsigned	getEnergyPoint(void)	const;
+	int			getAttackDamage(void)	const;
 
 	// 멤버 함수
 	void	attack(const std::string &target);

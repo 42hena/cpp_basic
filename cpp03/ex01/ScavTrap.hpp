@@ -15,3 +15,6 @@ public:
 	void	attack(const std::string &target);
 	void	guardGate(void);
 };
+
+void attack(const std::string& target);
+ClapTrap
