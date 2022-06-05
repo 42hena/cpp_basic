@@ -105,7 +105,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	else if (!energyPoint)
 	{
-		std::cout << "ClapTrap " << this->name << " can't repair myself, because no energyPoint." << std::endl;
+		std::cout << "ClapTrap " << name << " can't repair myself, because no energyPoint." << std::endl;
 	}
 	else
 	{
