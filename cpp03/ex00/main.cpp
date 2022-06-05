@@ -13,7 +13,7 @@ int main(void)
     
     std::cout << std::endl;
     A.attack(tanker);
-    B.takeDamage(0);
+    B.takeDamage(A.getAttackDamage());
     std::cout << std::endl;
 
     std::cout << std::endl;
