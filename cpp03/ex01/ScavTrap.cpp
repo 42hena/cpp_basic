@@ -6,7 +6,7 @@
 ScavTrap::ScavTrap(void)
     : ClapTrap("hena")
 {
-    std::cout << "ScavTrap Class Default Constructor" << std::endl;
+    std::cout << "ScavTrap Class "<< name << " Default Constructor" << std::endl;
 }
 
 // 생성자
@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(std::string name)
     this->hitPoint = 100;
     this->energyPoint = 50;
     this->attackDamage = 20;
-    std::cout << "ScavTrap Class Default Constructor" << std::endl;
+	std::cout << "ScavTrap Class "<< name << " Constructor" << std::endl;
 }
 
 // default 소멸자
