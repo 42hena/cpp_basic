@@ -25,6 +25,20 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap Class " << name << " Default Destructor" << std::endl;    
 }
 
+// 
+ScavTrap::ScavTrap(const ScavTrap& copy)
+{
+	*this = copy;
+}
+
+// 
+ScavTrap& ScavTrap::operator=(const ScavTrap &copy)
+{
+	name = copy.getName();
+	return *this;
+}
+
+
 // 멤버 함수
 void ScavTrap::attack(const std::string &target)
 {
