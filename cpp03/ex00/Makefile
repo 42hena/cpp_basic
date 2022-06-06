@@ -3,7 +3,7 @@ CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM			= rm -f
 
 NAME		=   Aaaaand...OPEN!
-SRC			=   main.cpp	\
+SRC			=   main.cpp		\
                 ClapTrap.cpp	\
 
 OBJ			= $(SRC:.cpp=.o)
