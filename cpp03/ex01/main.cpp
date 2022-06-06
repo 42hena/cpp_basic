@@ -5,9 +5,16 @@
 
 int main(void)
 {
-    ScavTrap teacher("donghyki");
     ClapTrap student("hena");
+    ScavTrap teacher("donghyki");
+    
+    std::cout << std::endl;
+    student.attack("donghyki");
+    teacher.takeDamage(student.getAttackDamage());
+    std::cout << std::endl;
 
+    std::cout << std::endl;
     teacher.attack("hena");
     student.takeDamage(teacher.getAttackDamage());
+    std::cout << std::endl;
 }
