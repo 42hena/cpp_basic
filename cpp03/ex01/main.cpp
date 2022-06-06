@@ -14,6 +14,11 @@ int main(void)
     std::cout << std::endl;
 
     std::cout << std::endl;
+    teacher.guardGate();
+    // student.guardGate();
+    std::cout << std::endl;
+
+    std::cout << std::endl;
     teacher.attack("hena");
     student.takeDamage(teacher.getAttackDamage());
     std::cout << std::endl;
