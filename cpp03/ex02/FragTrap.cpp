@@ -31,17 +31,17 @@ FragTrap::~FragTrap()
 // 복사 생성자
 FragTrap::FragTrap(const FragTrap& copy)
 {
-	
+	*this = copy;
 }
 
 // 복사 대입 연산자
-FragTrap &FragTrap::operator=(FragTrap const &frag)
+FragTrap &FragTrap::operator=(FragTrap const &copy)
 {
-	
+	this->name = copy.getName();
+	return *this;
 }
 
-
-
+// 멤버 함수
 void FragTrap::highFivesGuys(void)
 {
 	if (!hitPoint)

@@ -17,7 +17,9 @@ public:
 	FragTrap(const FragTrap& copy);
 
 	// 복사 대입 연산자
-	FragTrap &operator=(FragTrap const &frag);
+	FragTrap &operator=(FragTrap const &copy);
+
+	// 멤버 함수
 	void highFivesGuys(void);
 };
 
