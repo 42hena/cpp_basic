@@ -11,7 +11,7 @@ protected:
 public:
 	// 생성자
 	Animal(void);
-	Animal(std::string type);
+	Animal(const std::string &type);
 
 	// 소멸자
 	virtual ~Animal(void);
@@ -24,10 +24,10 @@ public:
 
 	// getter, setter
     virtual std::string getType(void) const;
-	void		setType(std::string type);
+	void				setType(std::string type);
 
 	// 멤버 함수
-	virtual void	makeSound(void) const;
+	virtual void		makeSound(void) const;
 };
 
 #endif

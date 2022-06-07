@@ -6,11 +6,10 @@
 Animal::Animal(void)
 	: type("Animal")
 {
-	// std::cout << "type : [" << type << "]" << std::endl;
 	std::cout << "Animal Default Constructor" << std::endl;
 }
 
-Animal::Animal(std::string type)
+Animal::Animal(const std::string &type)
 	: type(type)
 {
 	std::cout << "Animal Constructor" << std::endl;
@@ -29,7 +28,7 @@ Animal::Animal(const Animal &animal)
 }
 
 // 복사 대입 연산자
-Animal &Animal::operator=(const Animal &animal)
+Animal&	Animal::operator=(const Animal &animal)
 {
 	this->type = animal.getType();
 
