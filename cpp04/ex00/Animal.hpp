@@ -11,9 +11,10 @@ protected:
 public:
 	// 생성자
 	Animal(void);
+	Animal(std::string type);
 
 	// 소멸자
-	~Animal(void);
+	virtual ~Animal(void);
 
 	// 복사 생성자
 	Animal(const Animal &animal);
@@ -22,11 +23,11 @@ public:
 	Animal& operator=(const Animal &animal);
 
 	// getter, setter
-    std::string getType(void) const;
+    virtual std::string getType(void) const;
 	void		setType(std::string type);
 
 	// 멤버 함수
-	virtual void	makeSound(void) const = 0;
+	virtual void	makeSound(void) const;
 };
 
 #endif
