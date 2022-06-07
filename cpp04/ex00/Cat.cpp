@@ -25,6 +25,7 @@ Cat::Cat(const Cat &cat)
 Cat& Cat::operator=(const Cat &cat)
 { 
     this->type = cat.getType();
+
     return *this;
 }
 

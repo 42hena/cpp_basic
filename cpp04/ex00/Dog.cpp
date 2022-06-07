@@ -20,7 +20,7 @@ Dog::Dog(const Dog &dog)
 
 Dog& Dog::operator=(const Dog &dog)
 {
-    this->type = getType();
+    this->type = dog.getType();
     return *this;
 }
 
