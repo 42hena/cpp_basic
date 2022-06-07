@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include "Animal.hpp"
 #include "Cat.hpp"
 
 // default 생성자
