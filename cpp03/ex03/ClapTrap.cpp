@@ -114,3 +114,8 @@ void ClapTrap::beRepaired(unsigned int amount)
 		--energyPoint;
 	}
 }
+
+void ClapTrap::showState(void)
+{
+	std::cout << "Name [" << this->getName() << "], Hp [" << this->getHitPoint() << "], Ep [" << this->getEnergyPoint() << "], Damage [" << this->getAttackDamage() << "]" << std::endl;
+}

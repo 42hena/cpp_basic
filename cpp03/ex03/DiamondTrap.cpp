@@ -7,7 +7,6 @@
 DiamondTrap::DiamondTrap(void)
     : ClapTrap("_clap_name")
 {
-    ScavTrap::attack(name);
     hitPoint = 100;
     energyPoint = 100;
     attackDamage = 30;
@@ -18,7 +17,6 @@ DiamondTrap::DiamondTrap(void)
 DiamondTrap::DiamondTrap(std::string name)
     : ClapTrap(name + "_clap_name")
 {
-    ScavTrap::attack(name);
     hitPoint = 100;
     energyPoint = 50;
     attackDamage = 30;
