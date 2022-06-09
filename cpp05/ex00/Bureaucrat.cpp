@@ -5,6 +5,12 @@
 
 // 여기선 선언부 쓰면 터짐 ^^
 //Bureaucrat::Bureaucrat(std::string name = "default", int grade = 150)
+
+// 생성자
+
+// Bureaucrat::Bureaucrat(void)
+// { }
+
 Bureaucrat::Bureaucrat(std::string name, int grade)
     : name(name), grade(grade)
 { 
@@ -13,7 +19,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
     else if (grade > 150)
         throw (GradeTooLowException());
     std::cout << "생성자 입니다:)" << std::endl;
-    std::cout << name << ' ' << grade << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(void)

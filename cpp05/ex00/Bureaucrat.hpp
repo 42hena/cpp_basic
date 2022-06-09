@@ -9,6 +9,8 @@ private:
 	const std::string name;
 	int grade;
 
+
+	// Bureaucrat(void);
 public:
 	// 생성자
 	Bureaucrat(std::string name = "default", int grade = 150);
@@ -16,17 +18,26 @@ public:
 	// 소멸자
 	~Bureaucrat(void);
 
+	// 복사 생성자
+	Bureaucrat(const Bureaucrat &bureaucrat);
+
+	// 복사 대입 연산자
+	Bureaucrat& operator=(const Bureaucrat &bureaucrat);
+
 	// getter setter
-	std::string getName(void) const;
-	int getGrade(void) const;
+	std::string getName(void)		const;
+	int getGrade(void)				const;
 	void setGrade(const int num);
 
+
+
+	// 예외 클래스
 	class GradeTooHighException : public std::exception
 	{
 	public:
 		const char *what(void) const throw()
 		{
-			return ("not in range(1 ~ 150), GradeTooHigh :(");
+			return ("GradeTooHigh :(");
 		}
 	};
 
@@ -35,7 +46,7 @@ public:
 	public:
 		const char *what(void) const throw()
 		{
-			return ("not in range(1 ~ 150), GradeTooLow :(");
+			return ("GradeTooLow :(");
 		}
 	};
 

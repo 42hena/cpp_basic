@@ -96,19 +96,19 @@ int main(void)
     std::cout << "destructor TEST END" << std::endl << std::endl;
 
     // destructor ERROR // LEAK 
-    // std::cout << "destructor START" << std::endl;
-    // try
-    // {
-    //     Bureaucrat *destructor = new Bureaucrat();
-    //     std::cout << *destructor << std::endl;
-    //     destructor->decrement();
-    //     // 출력 안됨
-    //     std::cout << *destructor << std::endl;
-    // }
-    // catch(std::exception &e)
-    // {
-    //     // delete destro
-    //     std::cerr << e.what() << '\n';
-    // }
-    // std::cout << "destructor TEST END" << std::endl << std::endl;
+    std::cout << "destructor START" << std::endl;
+    try
+    {
+        Bureaucrat *destructor = new Bureaucrat();
+        std::cout << *destructor << std::endl;
+        destructor->decrement();
+        // 출력 안됨
+        std::cout << *destructor << std::endl;
+    }
+    catch(std::exception &e)
+    {
+        // delete destro
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << "destructor TEST END" << std::endl << std::endl;
 }
