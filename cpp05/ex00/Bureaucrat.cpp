@@ -1,15 +1,17 @@
 #include <iostream>
 #include <exception>
+
 #include "Bureaucrat.hpp"
-#include "RangeException.hpp"
 
 // 여기선 선언부 쓰면 터짐 ^^
 //Bureaucrat::Bureaucrat(std::string name = "default", int grade = 150)
 Bureaucrat::Bureaucrat(std::string name, int grade)
     : name(name), grade(grade)
 { 
-    if (grade < 1 || grade > 150)
-        throw (RangeException());
+    if (grade < 1)
+        throw (GradeTooHighException());
+    else if (grade > 150)
+        throw (GradeTooLowException());
     std::cout << "생성자 입니다:)" << std::endl;
     std::cout << name << ' ' << grade << std::endl;
 }
@@ -34,22 +36,22 @@ void		Bureaucrat::setGrade(const int num)
     this->grade = num;
 }
 
-void		Bureaucrat::increment(Bureaucrat &bureaucrat)
+void		Bureaucrat::increment(void)
 {
-    int nowGrade = bureaucrat.getGrade();
+    int nowGrade = this->getGrade();
 
     if (nowGrade == 1)
-        throw(RangeException());
+        throw(GradeTooHighException());
     else
         setGrade(--nowGrade);
 }
 
-void		Bureaucrat::decrement(Bureaucrat &bureaucrat)
+void		Bureaucrat::decrement(void)
 {
-    int nowGrade = bureaucrat.getGrade();
+    int nowGrade = this->getGrade();
 
     if (nowGrade == 150)
-        throw(RangeException());
+        throw(GradeTooLowException());
     else
         setGrade(++nowGrade);
 }
