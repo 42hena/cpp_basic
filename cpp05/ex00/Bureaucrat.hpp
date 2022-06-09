@@ -17,8 +17,8 @@ public:
 	~Bureaucrat(void);
 
 	// getter setter
-	std::string getName(void);
-	int getGrade(void);
+	std::string getName(void) const;
+	int getGrade(void) const;
 	void setGrade(const int num);
 
 	class GradeTooHighException : public std::exception
@@ -43,5 +43,7 @@ public:
 	void increment();
 	void decrement();
 };
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &bureaucrat);
 
 #endif

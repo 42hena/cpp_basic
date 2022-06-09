@@ -21,12 +21,12 @@ Bureaucrat::~Bureaucrat(void)
     std::cout << "소멸자 입니다:)" << std::endl;
 }
 
-std::string Bureaucrat::getName(void)
+std::string Bureaucrat::getName(void) const
 {
     return this->name;
 }
 
-int			Bureaucrat::getGrade(void)
+int			Bureaucrat::getGrade(void) const
 {
     return this->grade;
 }
@@ -54,4 +54,11 @@ void		Bureaucrat::decrement(void)
         throw(GradeTooLowException());
     else
         setGrade(++nowGrade);
+}
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
+{
+	os << "name: [" << bureaucrat.getName() << "], bureaucrat grade: [" << bureaucrat.getGrade() << "]";
+
+	return (os);
 }
