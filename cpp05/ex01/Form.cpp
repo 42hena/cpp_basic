@@ -4,7 +4,7 @@
 
 // 생성자
 Form::Form(std::string name, bool isSigned, const int signGrade, const int excuteGrade)
-	: name(name), isSigned(isSigned), signGrade(signGrade), excuteGrade(excuteGrade)
+	: name(name), isSigned(isSigned), signGrade(signGrade), executeGrade(excuteGrade)
 {
 	if (signGrade > 150 || excuteGrade > 150)
 		throw(GradeTooLowException());
@@ -21,7 +21,7 @@ Form::~Form(void)
 
 // 복사 생성자
 Form::Form(const Form &form)
-	: name(form.name), isSigned(form.isSigned), signGrade(form.signGrade), excuteGrade(form.excuteGrade)
+	: name(form.name), isSigned(form.isSigned), signGrade(form.signGrade), executeGrade(form.executeGrade)
 { }
 
 // 복사 대입 연산자
@@ -45,12 +45,12 @@ bool			Form::getIsSigned(void) const
 
 int				Form::getSignGrade(void) const
 {
-	return this->isSigned;
+	return this->signGrade;
 }
 
-int				Form::getExcuteGrade(void) const
+int				Form::getExecuteGrade(void) const
 {
-	return this->excuteGrade;
+	return this->executeGrade;
 }
 
 // setter
@@ -76,7 +76,7 @@ void	Form::signForm(const Bureaucrat &bureaucrat)
 	}
 	else
 	{
-		if (bureaucrat.getGrade() < this->signGrade && bureaucrat.getGrade() < this->excuteGrade)
+		if (bureaucrat.getGrade() < this->signGrade && bureaucrat.getGrade() < this->executeGrade)
 			//std::cout << "bureaucrat " << bureaucrat.getName() << " couldn’t sign " << this->name << " form hasn't no signed" << std::endl;
 			std::cout << "아직 싸인 안됨" << std::endl;
 		else
@@ -94,4 +94,11 @@ const char* Form::GradeTooHighException::what(void) const throw()
 const char* Form::GradeTooLowException::what(void) const throw()
 {
 	return ("[Form] GradeTooLow :(");
+}
+
+std::ostream &operator<<(std::ostream &os, Form const &form)
+{
+	os << "Name: [" << form.getName() << "], isSigned: [" << form.getIsSigned() << "], signGrade: [" << form.getSignGrade() << "], executeGrade :[" << form.getExecuteGrade() << "]";
+
+	return os;
 }

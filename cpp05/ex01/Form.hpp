@@ -7,7 +7,7 @@ private:
     const std::string	name;
     bool				isSigned;
 	const int			signGrade;
-	const int			excuteGrade;
+	const int			executeGrade;
 
 public:
 	// 생성자
@@ -27,7 +27,7 @@ public:
 	bool			getIsSigned(void) const;
 	void			setIsSigned(void);
 	int				getSignGrade(void) const;
-	int				getExcuteGrade(void) const; 
+	int				getExecuteGrade(void) const; 
 
 	// 멤버 함수
 	void	beSigned(Bureaucrat &bureaucrat);
@@ -47,4 +47,4 @@ public:
 	};
 };
 
-std::ostream &operator<<(std::ostream &os, Form const &bureaucrat);
+std::ostream &operator<<(std::ostream &os, Form const &form);
