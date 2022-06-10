@@ -5,8 +5,8 @@
 
 
 /*********************
-// 여기선 선언부 쓰면 터짐 ^^
-//Bureaucrat::Bureaucrat(std::string name = "default", int grade = 150)
+배운 점: 여기선 선언부 쓰면 터짐 ^^
+ex) Bureaucrat::Bureaucrat(std::string name = "default", int grade = 150)
 *********************/
 
 // 생성자
@@ -17,14 +17,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 		throw (GradeTooHighException());
 	else if (grade > 150)
 		throw (GradeTooLowException());
-	std::cout << "생성자 입니다:)" << std::endl;
+	std::cout << "Bureaucrat 생성자 입니다:)" << std::endl;
 }
-
 
 // 소멸자
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "소멸자 입니다:)" << std::endl;
+	std::cout << "Bureaucrat 소멸자 입니다:)" << std::endl;
 }
 
 // 복사 생성자
@@ -41,6 +40,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 	return *this;
 }
 
+// getter
 std::string Bureaucrat::getName(void) const
 {
 	return this->name;
@@ -51,8 +51,13 @@ int			Bureaucrat::getGrade(void) const
 	return this->grade;
 }
 
+// setter
 void		Bureaucrat::setGrade(const int num)
 {
+	if(num < 1)
+		throw(GradeTooHighException());	
+	if (num > 150)
+		throw(GradeTooLowException());
 	this->grade = num;
 }
 
