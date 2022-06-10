@@ -11,7 +11,7 @@ private:
 
 public:
 	// 생성자
-    Form(std::string name = "Default Form", bool isSigned = false, const int signGrade = 150, const int excuteGrade = 150);
+    Form(std::string name = "Default Form", bool isSigned = false, const int signGrade = 150, const int executeGrade = 150);
 
 	// 소멸자
     ~Form(void);
