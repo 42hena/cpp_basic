@@ -3,12 +3,12 @@
 #include "Form.hpp"
 
 // 생성자
-Form::Form(std::string name, bool isSigned, const int signGrade, const int excuteGrade)
-	: name(name), isSigned(isSigned), signGrade(signGrade), executeGrade(excuteGrade)
+Form::Form(std::string name, bool isSigned, const int signGrade, const int executeGrade)
+	: name(name), isSigned(isSigned), signGrade(signGrade), executeGrade(executeGrade)
 {
-	if (signGrade > 150 || excuteGrade > 150)
+	if (signGrade > 150 || executeGrade > 150)
 		throw(GradeTooLowException());
-	if (signGrade < 0 || excuteGrade < 0)
+	if (signGrade < 0 || executeGrade < 0)
 		throw(GradeTooHighException());
 	std::cout << "Form 생성자 입니다:)" << std::endl;
 }
