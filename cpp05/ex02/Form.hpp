@@ -33,7 +33,7 @@ public:
 	void	beSigned(Bureaucrat &bureaucrat);
 	void	signForm(const Bureaucrat &bureaucrat);
 
-	virtual void execute(Bureaucrat const & executor) const = 0;
+	virtual void execute(Bureaucrat const &executer) const = 0;
 
 	// 예외 클래스
 	class GradeTooHighException : public std::exception
