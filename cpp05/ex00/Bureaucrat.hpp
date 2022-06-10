@@ -36,19 +36,13 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		const char *what(void) const throw()
-		{
-			return ("GradeTooHigh :(");
-		}
+		const char *what(void) const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		const char *what(void) const throw()
-		{
-			return ("GradeTooLow :(");
-		}
+		const char *what(void) const throw();
 	};
 };
 
