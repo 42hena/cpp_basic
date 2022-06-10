@@ -5,8 +5,8 @@
 
 
 /*********************
-// 여기선 선언부 쓰면 터짐 ^^
-//Bureaucrat::Bureaucrat(std::string name = "default", int grade = 150)
+배운 점: 여기선 선언부 쓰면 터짐 ^^
+ex) Bureaucrat::Bureaucrat(std::string name = "default", int grade = 150)
 *********************/
 
 // 생성자
@@ -17,17 +17,22 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 		throw (GradeTooHighException());
 	else if (grade > 150)
 		throw (GradeTooLowException());
-	std::cout << "생성자 입니다:)" << std::endl;
+	std::cout << "Bureaucrat 생성자 입니다:)" << std::endl;
 }
-
 
 // 소멸자
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "소멸자 입니다:)" << std::endl;
+	std::cout << "Bureaucrat 소멸자 입니다:)" << std::endl;
 }
 
 // 복사 생성자
+/*
+case 1 : 기존에 생성된 객체를 이용해 새로운 객체를 초기화하는 경우(위의 경우)
+case 2 : Call-by-value 방식의 함수 호출 과정에서 객체를 인자로 전달하는 경우
+case 3 : 객체를 반환하되, 참조형으로 반환하지 않는 경우
+예외 처리 필요 x
+*/
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
 {
 	*this = bureaucrat;
@@ -41,6 +46,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 	return *this;
 }
 
+// getter
 std::string Bureaucrat::getName(void) const
 {
 	return this->name;
@@ -51,8 +57,13 @@ int			Bureaucrat::getGrade(void) const
 	return this->grade;
 }
 
+// setter
 void		Bureaucrat::setGrade(const int num)
 {
+	if(num < 1)
+		throw(GradeTooHighException());	
+	if (num > 150)
+		throw(GradeTooLowException());
 	this->grade = num;
 }
 

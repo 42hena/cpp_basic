@@ -28,7 +28,9 @@ public:
 	int getGrade(void)				const;
 	void setGrade(const int num);
 
-
+	// 멤버 함수
+	void increment();
+	void decrement();
 
 	// 예외 클래스
 	class GradeTooHighException : public std::exception
@@ -48,10 +50,6 @@ public:
 			return ("GradeTooLow :(");
 		}
 	};
-
-	// 멤버 함수
-	void increment();
-	void decrement();
 };
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat const &bureaucrat);
