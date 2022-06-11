@@ -10,14 +10,18 @@ class Bureaucrat;
 class Form
 {
 private:
+	// 멤버 변수
     const std::string	name;
     bool				isSigned;
 	const int			signGrade;
 	const int			executeGrade;
 
+	// default 생성자
+	Form(void);
+
 public:
 	// 생성자
-    Form(std::string name = "Default Form", bool isSigned = false, const int signGrade = 150, const int executeGrade = 150);
+    Form(std::string name, bool isSigned, const int signGrade, const int executeGrade);
 
 	// 소멸자
     ~Form(void);

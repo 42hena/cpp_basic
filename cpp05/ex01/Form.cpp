@@ -10,13 +10,13 @@ Form::Form(std::string name, bool isSigned, const int signGrade, const int execu
 		throw(GradeTooLowException());
 	if (signGrade < 0 || executeGrade < 0)
 		throw(GradeTooHighException());
-	std::cout << "Form 생성자 입니다:)" << std::endl;
+	std::cout << "Form " << name << " 생성자 입니다:)" << std::endl;
 }
 
 // 소멸자
 Form::~Form(void)
 {
-	std::cout << "Form 소멸자 입니다:)" << std::endl;
+	std::cout << "Form " << name << " 소멸자 입니다:)" << std::endl;
 }
 
 // 복사 생성자
@@ -81,7 +81,7 @@ const char* Form::GradeTooLowException::what(void) const throw()
 
 std::ostream &operator<<(std::ostream &os, Form const &form)
 {
-	os << "Name: [" << form.getName() << "], isSigned: [" << form.getIsSigned() << "], signGrade: [" << form.getSignGrade() << "], executeGrade :[" << form.getExecuteGrade() << "]";
+	os << "[Form] Name: [" << form.getName() << "], isSigned: [" << form.getIsSigned() << "], signGrade: [" << form.getSignGrade() << "], executeGrade :[" << form.getExecuteGrade() << "]";
 
 	return os;
 }
