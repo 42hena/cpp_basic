@@ -88,11 +88,8 @@ void		Bureaucrat::signForm(Form &form)
 {
 	try
 	{
-		if (this->grade <= form.getSignGrade())
-		{
-			form.beSigned(*this);
-			std::cout << this->getName() << " signed " << form.getName() << std::endl;
-		}
+		form.beSigned(*this);	
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
