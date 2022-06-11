@@ -62,27 +62,10 @@ void			Form::setIsSigned(void)
 // 멤버 함수
 void    Form::beSigned(Bureaucrat &bureaucrat)
 {
-	if (bureaucrat.getGrade() < this->signGrade)
+	if (bureaucrat.getGrade() <= this->signGrade)
 		this->isSigned = true;
 	else
-		throw (Form::GradeTooLowException());
-}
-
-void	Form::signForm(const Bureaucrat &bureaucrat)
-{
-	if (this->isSigned)
-	{
-		std::cout << "bureaucrat " << bureaucrat.getName() << " signed " << this->name << " form" << std::endl;
-	}
-	else
-	{
-		if (bureaucrat.getGrade() < this->signGrade && bureaucrat.getGrade() < this->executeGrade)
-			//std::cout << "bureaucrat " << bureaucrat.getName() << " couldn’t sign " << this->name << " form hasn't no signed" << std::endl;
-			std::cout << "아직 싸인 안됨" << std::endl;
-		else
-			// std::cout << "bureaucrat " << bureaucrat.getName() << " couldn’t sign " << this->name << " " << std::endl;
-			std::cout << "등급 에러" << std::endl;
-	}
+		throw (GradeTooLowException());
 }
 
 // 예외 클래스

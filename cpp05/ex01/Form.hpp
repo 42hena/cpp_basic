@@ -1,6 +1,12 @@
+#ifndef FORM_HPP
+#define FORM_HPP
+
 #include <string>
 
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
+
 class Form
 {
 private:
@@ -23,15 +29,14 @@ public:
 	Form& operator=(const Form &form);
 
 	//getter, setter
-	std::string		getName(void) const;
-	bool			getIsSigned(void) const;
+	std::string		getName(void)			const;
+	bool			getIsSigned(void)		const;
 	void			setIsSigned(void);
-	int				getSignGrade(void) const;
-	int				getExecuteGrade(void) const; 
+	int				getSignGrade(void)		const;
+	int				getExecuteGrade(void)	const; 
 
 	// 멤버 함수
-	void	beSigned(Bureaucrat &bureaucrat);
-	void	signForm(const Bureaucrat &bureaucrat);
+	void			beSigned(Bureaucrat &bureaucrat);
 
 	// 예외 클래스
 	class GradeTooHighException : public std::exception
@@ -48,3 +53,5 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &os, Form const &form);
+
+#endif
