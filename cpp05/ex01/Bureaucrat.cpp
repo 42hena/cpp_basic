@@ -2,7 +2,7 @@
 #include <exception>
 
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 
 /*********************
 배운 점: 여기선 선언부 쓰면 터짐 ^^
@@ -81,6 +81,24 @@ void		Bureaucrat::decrement(void)
 		setGrade(++nowGrade);
 }
 
+void		Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		if (this->grade <= form.getSignGrade())
+		{
+			form.beSigned(*this);
+			std::cout << this->getName() << " signed " << form.getName() << std::endl;
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << form.getName() << 
+		" because " << e.what() << std::endl;
+	}
+}
+
+// 예외 클래스
 const char*	Bureaucrat::GradeTooHighException::what(void) const throw()
 {
 	return ("[Bureaucrat] GradeTooHigh :(");
