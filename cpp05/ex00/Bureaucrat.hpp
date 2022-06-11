@@ -12,6 +12,7 @@ private:
 
 	// default 생성자
 	Bureaucrat(void);
+	
 public:
 	// 생성자
 	Bureaucrat(std::string name, int grade);
