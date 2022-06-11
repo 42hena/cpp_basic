@@ -54,9 +54,9 @@ int				Form::getExecuteGrade(void) const
 }
 
 // setter
-void			Form::setIsSigned(void)
+void			Form::setIsSigned(bool sign)
 {
-	this->isSigned = true;
+	this->isSigned = sign;
 }
 
 // 멤버 함수

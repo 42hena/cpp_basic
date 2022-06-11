@@ -35,7 +35,7 @@ public:
 	//getter, setter
 	std::string		getName(void)			const;
 	bool			getIsSigned(void)		const;
-	void			setIsSigned(void);
+	void			setIsSigned(bool sign);
 	int				getSignGrade(void)		const;
 	int				getExecuteGrade(void)	const; 
 
