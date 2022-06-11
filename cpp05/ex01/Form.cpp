@@ -8,7 +8,7 @@ Form::Form(std::string name, bool isSigned, const int signGrade, const int execu
 {
 	if (signGrade > 150 || executeGrade > 150)
 		throw(GradeTooLowException());
-	if (signGrade < 0 || executeGrade < 0)
+	if (signGrade < 1 || executeGrade < 1)
 		throw(GradeTooHighException());
 	std::cout << "Form " << name << " 생성자 입니다:)" << std::endl;
 }
