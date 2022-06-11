@@ -3,13 +3,16 @@
 
 #include <string>
 
+#include "Form.hpp"
+
+class Form;
+
 class Bureaucrat
 {
 private:
 	const std::string	name;
 	int					grade;
 
-	// Bureaucrat(void);
 public:
 	// 생성자
 	Bureaucrat(std::string name = "default", int grade = 150);
@@ -24,15 +27,16 @@ public:
 	Bureaucrat& operator=(const Bureaucrat &bureaucrat);
 
 	// getter setter
-	std::string getName(void)		const;
-	int getGrade(void)				const;
-	void setGrade(const int num);
+	std::string		getName(void)				const;
+	int				getGrade(void)				const;
+	void			setGrade(const int num);
 
 	// 멤버 함수
-	void increment();
-	void decrement();
+	void			increment();
+	void			decrement();
 
-	void			executeForm(Form const &form);
+	void			signForm(Form &form);
+	void			excuteForm(Form const &form);
 
 	// 예외 클래스
 	class GradeTooHighException : public std::exception
