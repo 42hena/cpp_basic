@@ -10,12 +10,15 @@ class Form;
 class Bureaucrat
 {
 private:
+	// 멤버 변수
 	const std::string	name;
 	int					grade;
 
+	// default 생성자
+	Bureaucrat(void);
 public:
 	// 생성자
-	Bureaucrat(std::string name = "default", int grade = 150);
+	Bureaucrat(std::string name, int grade);
 
 	// 소멸자
 	~Bureaucrat(void);
@@ -41,16 +44,16 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		const char *what(void) const throw();
+		const char* what(void) const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		const char *what(void) const throw();
+		const char* what(void) const throw();
 	};
 };
 
-std::ostream &operator<<(std::ostream &os, Bureaucrat const &bureaucrat);
+std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat);
 
 #endif
