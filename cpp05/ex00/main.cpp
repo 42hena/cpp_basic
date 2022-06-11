@@ -9,7 +9,7 @@ int main(void)
     try
     {
         Bureaucrat test("overflow", 151);
-        // 에러 이므로 아래가 출력되지 않음
+        std::cout << "No print." << std::endl;
     }
     catch(std::exception &e)
     {
@@ -19,12 +19,14 @@ int main(void)
     try
     {
         Bureaucrat test("underflow", 0);
+        std::cout << "No print." << std::endl;
     }
     catch(std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
     std::cout << "RANGE END" << std::endl << std::endl;
+
 
     // highest TEST
     std::cout << "high TEST START" << std::endl;
@@ -33,26 +35,26 @@ int main(void)
     {
         std::cout << high << std::endl;
         high.increment();
-        // 출력 안됨
+        std::cout << "No print." << std::endl;
         std::cout << high << std::endl;
     }
     catch(std::exception &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     try
     {
-        std::cout << high << std::endl;
         high.decrement();
         std::cout << high << std::endl;
     }
     catch(std::exception &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << "high TEST END" << std::endl << std::endl;
 
+    
     // lowest TEST
     std::cout << "low TEST START" << std::endl;
     Bureaucrat low("lowest", 150);
@@ -60,6 +62,7 @@ int main(void)
     {
         std::cout << low << std::endl;
         low.decrement();
+        std::cout << "No print." << std::endl;
         std::cout << low << std::endl;
     }
     catch(std::exception &e)
@@ -69,7 +72,6 @@ int main(void)
 
     try
     {
-        std::cout << low << std::endl;
         low.increment();
         std::cout << low << std::endl;        
     }
@@ -86,29 +88,31 @@ int main(void)
         Bureaucrat destructor("destructor", 1);
         std::cout << destructor << std::endl;
         destructor.increment();
-        // 출력 안됨
+
+        std::cout << "No print." << std::endl;
         std::cout << destructor << std::endl;
     }
     catch(std::exception &e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << "destructor TEST END" << std::endl << std::endl;
 
-    // destructor ERROR // LEAK 
+    // destructor ERROR // LEAK
     // std::cout << "destructor ERROR START" << std::endl;
     // try
     // {
     //     Bureaucrat *destructor = new Bureaucrat();
     //     std::cout << *destructor << std::endl;
     //     destructor->decrement();
-    //     // 출력 안됨
+    //     std::cout << "No print." << std::endl;
     //     std::cout << *destructor << std::endl;
     // }
-    // catch(std::exception &e)
+    // catch (std::exception &e)
     // {
     //     // delete destro
-    //     std::cerr << e.what() << '\n';
+    //     std::cerr << e.what() << std::endl;
     // }
-    // std::cout << "destructor ERROR END" << std::endl << std::endl;
+    // std::cout << "destructor ERROR END" << std::endl
+    //           << std::endl;
 }
