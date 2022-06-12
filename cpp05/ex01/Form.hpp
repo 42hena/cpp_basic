@@ -16,11 +16,9 @@ private:
 	const int			signGrade;
 	const int			executeGrade;
 
-	// default 생성자
-	Form(void);
-
 public:
 	// 생성자
+	Form(void);
     Form(std::string name, bool isSigned, const int signGrade, const int executeGrade);
 
 	// 소멸자

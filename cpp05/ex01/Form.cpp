@@ -3,6 +3,12 @@
 #include "Form.hpp"
 
 // 생성자
+Form::Form(void)
+	: name("default"), isSigned(false), signGrade(150), executeGrade(150)
+{
+	std::cout << "Form " << name << " 생성자 입니다:)" << std::endl;
+}
+
 Form::Form(std::string name, bool isSigned, const int signGrade, const int executeGrade)
 	: name(name), isSigned(isSigned), signGrade(signGrade), executeGrade(executeGrade)
 {
