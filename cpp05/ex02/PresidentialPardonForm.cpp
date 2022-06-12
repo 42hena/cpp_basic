@@ -3,10 +3,7 @@
 #include "PresidentialPardonForm.hpp"
 
 // 생성자
-PresidentialPardonForm::PresidentialPardonForm(void)
-{ }
-
-PresidentialPardonForm::PresidentialPardonForm(std::string &target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target)
     : Form(target, false, 25, 5)
 {
     std::cout << "PresidentialPardonForm 생성자" << std::endl;

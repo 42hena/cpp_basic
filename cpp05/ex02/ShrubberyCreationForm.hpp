@@ -7,7 +7,7 @@ private:
 
 public:
     // 생성자
-    ShrubberyCreationForm(std::string &target);
+    ShrubberyCreationForm(std::string target);
 
     // 소멸자
     ~ShrubberyCreationForm(void);

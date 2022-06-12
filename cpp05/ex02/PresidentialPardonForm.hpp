@@ -10,7 +10,7 @@ private:
 
 public:
 	// 생성자
-	PresidentialPardonForm(std::string &target);
+	PresidentialPardonForm(std::string target);
 
 	// 소멸자
 	~PresidentialPardonForm(void);

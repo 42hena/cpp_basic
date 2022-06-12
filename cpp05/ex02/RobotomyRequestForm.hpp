@@ -7,7 +7,7 @@ private:
 
 public:
     // 생성자
-    RobotomyRequestForm(std::string &target);
+    RobotomyRequestForm(std::string target);
 
     // 소멸자
     ~RobotomyRequestForm();
