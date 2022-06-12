@@ -10,9 +10,6 @@ private:
 	const std::string	name;
 	int					grade;
 
-	// default 생성자
-	
-
 public:
 	// 생성자
 	Bureaucrat(void);
