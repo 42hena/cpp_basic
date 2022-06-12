@@ -1,5 +1,5 @@
 CXX	= c++
-CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 
 NAME		=   ex00

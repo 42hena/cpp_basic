@@ -99,20 +99,20 @@ int main(void)
     std::cout << "destructor TEST END" << std::endl << std::endl;
 
     // destructor ERROR // LEAK
-    std::cout << "destructor ERROR START" << std::endl;
-    try
-    {
-        Bureaucrat *destructor = new Bureaucrat();
-        std::cout << *destructor << std::endl;
-        destructor->decrement();
-        std::cout << "No print." << std::endl;
-        std::cout << *destructor << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        // delete destructor;
-        std::cerr << e.what() << std::endl;
-    }
-    std::cout << "destructor ERROR END" << std::endl
-              << std::endl;
+    // std::cout << "destructor ERROR START" << std::endl;
+    // try
+    // {
+    //     Bureaucrat *destructor = new Bureaucrat();
+    //     std::cout << *destructor << std::endl;
+    //     destructor->decrement();
+    //     std::cout << "No print." << std::endl;
+    //     std::cout << *destructor << std::endl;
+    // }
+    // catch (std::exception &e)
+    // {
+    //     // delete destructor;
+    //     std::cerr << e.what() << std::endl;
+    // }
+    // std::cout << "destructor ERROR END" << std::endl
+    //           << std::endl;
 }
