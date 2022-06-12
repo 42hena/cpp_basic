@@ -16,11 +16,9 @@ private:
 	const int			signGrade;
 	const int			executeGrade;
 
-	// default 생성자
-	Form(void);
-
 public:
 	// 생성자
+	Form(void);
     Form(std::string name, bool isSigned, const int signGrade, const int executeGrade);
 
 	// 소멸자
@@ -37,7 +35,7 @@ public:
 	bool			getIsSigned(void)		const;
 	void			setIsSigned(bool sign);
 	int				getSignGrade(void)		const;
-	int				getExecuteGrade(void)	const; 
+	int				getExecuteGrade(void)	const;
 
 	// 멤버 함수
 	void			beSigned(Bureaucrat &bureaucrat);
