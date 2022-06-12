@@ -62,6 +62,7 @@ void		Bureaucrat::setGrade(const int num)
 	this->grade = num;
 }
 
+// 멤버 함수
 void		Bureaucrat::increment(void)
 {
 	int nowGrade = this->getGrade();
