@@ -6,7 +6,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-void    ShrubberyTEST(void)
+void    FormTEST(void)
 {
     {
         Bureaucrat hena1("hena Shrubbery1", 145);
@@ -14,6 +14,16 @@ void    ShrubberyTEST(void)
         ShrubberyCreationForm SForm("home");
         hena1.signForm(SForm);
         hena2.signForm(SForm);
+
+        try
+        {
+            ShrubberyCreationForm SForm("home");
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        
     }
     std::cout << std::endl;
     {
@@ -65,13 +75,10 @@ void    ShrubberyTEST(void)
     }
 }
 
-
 int main(void)
 {
 	// Form TEST
-	ShrubberyTEST();
+	FormTEST();
 
 	std::cout << std::endl << std::endl;
-
-	// SignTest
 }

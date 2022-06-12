@@ -12,11 +12,15 @@ Intern::~Intern(void)
 
 // 복사 생성자
 Intern::Intern(const Intern& intern)
-{ }
+{
+	static_cast<void>(intern);
+}
 
 // 복사 대입 연산자
 Intern& Intern::operator=(const Intern& intern)
 {
+	static_cast<void>(intern);
+
 	return *this;
 }
 
@@ -64,5 +68,5 @@ Form* Intern::makeForm(std::string name, std::string target)
 
 const char* Intern::NoNameException::what() const throw()
 {
-	return "This is not right name";
+	return "No Match From :(";
 }
