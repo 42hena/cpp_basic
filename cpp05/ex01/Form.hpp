@@ -37,7 +37,7 @@ public:
 	bool			getIsSigned(void)		const;
 	void			setIsSigned(bool sign);
 	int				getSignGrade(void)		const;
-	int				getExecuteGrade(void)	const; 
+	int				getExecuteGrade(void)	const;
 
 	// 멤버 함수
 	void			beSigned(Bureaucrat &bureaucrat);
