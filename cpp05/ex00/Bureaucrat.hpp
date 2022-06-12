@@ -11,10 +11,11 @@ private:
 	int					grade;
 
 	// default 생성자
-	Bureaucrat(void);
+	
 
 public:
 	// 생성자
+	Bureaucrat(void);
 	Bureaucrat(std::string name, int grade);
 
 	// 소멸자

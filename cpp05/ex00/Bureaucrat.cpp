@@ -10,7 +10,10 @@ ex) Bureaucrat::Bureaucrat(std::string name = "default", int grade = 150)
 
 // 생성자
 Bureaucrat::Bureaucrat(void)
-{ }
+	: name("default", 150)
+{
+	std::cout << "Bureaucrat " << name << " 생성자 입니다:)" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 	: name(name), grade(grade)
