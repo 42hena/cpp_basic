@@ -32,12 +32,6 @@ Bureaucrat::~Bureaucrat(void)
 }
 
 // 복사 생성자
-/*
-case 1 : 기존에 생성된 객체를 이용해 새로운 객체를 초기화하는 경우(위의 경우)
-case 2 : Call-by-value 방식의 함수 호출 과정에서 객체를 인자로 전달하는 경우
-case 3 : 객체를 반환하되, 참조형으로 반환하지 않는 경우
-예외 처리 필요 x
-*/
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
 {
 	*this = bureaucrat;
