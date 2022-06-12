@@ -4,11 +4,6 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-/*********************
-배운 점: 여기선 선언부 쓰면 터짐 ^^
-ex) Bureaucrat::Bureaucrat(std::string name = "default", int grade = 150)
-*********************/
-
 // 생성자
 Bureaucrat::Bureaucrat(void)
 { }
