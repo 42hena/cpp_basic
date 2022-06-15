@@ -9,7 +9,7 @@ int main(void)
     Base*   random = NULL;
     
     
-    // random = generate();
+    random = generate();
     // 예외 케이스 1
     // 그냥 넣기
     identify(random);

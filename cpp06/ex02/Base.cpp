@@ -19,7 +19,7 @@ Base*	generate(void)
 	srand(time(NULL));
 	int num = rand() % 3;
 
-	Base * ret;
+	Base * ret = NULL;
 	switch (num)
 	{
 	case 0:
@@ -67,6 +67,7 @@ void    identify(Base& p)
 	try
 	{
 		A &a = dynamic_cast<A &>(p);
+		static_cast<void>(a);
 		std::cout << "A class 입니다 :)" << std::endl;
 	}
 	catch(const std::exception& e)
@@ -78,6 +79,7 @@ void    identify(Base& p)
 	try
 	{
 		B &b = dynamic_cast<B &>(p);
+		static_cast<void>(b);
 		std::cout << "B class 입니다 :)" << std::endl;
 	}
 	catch(const std::exception& e)
@@ -89,6 +91,7 @@ void    identify(Base& p)
 	try
 	{
 		C &c = dynamic_cast<C &>(p);
+		static_cast<void>(c);
 		std::cout << "C class 입니다 :)" << std::endl;
 	}
 	catch(const std::exception& e)
