@@ -17,14 +17,19 @@ Convert::Convert(const std::string input)
 
 Convert::Convert(const Convert &convert)
 	: input(convert.input), value(convert.value), flag(convert.flag), alphaFlag(convert.alphaFlag)
-{ }
+{
+	
+}
 
 Convert::~Convert(void)
 { }
 
 Convert &Convert::operator=(const Convert &convert)
 {
-	*this = convert;
+	if (this != &convert)
+	{
+		*this = convert;
+	}
 	return *this;
 }
 
@@ -46,7 +51,7 @@ int Convert::toInt() const
 	{
 		int tmp;
 		if (alphaFlag)
-			tmp = (int)value;
+			tmp = static_cast<int>(value);
 		else
 			tmp = std::stoi(this->input);
 		return tmp;

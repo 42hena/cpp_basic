@@ -3,11 +3,6 @@
 
 #include "Convert.hpp"
 
-void    convert(Convert &convertBefore)
-{
-
-}
-
 int main(int argc, char **argv)
 {
 	if (argc != 2)
