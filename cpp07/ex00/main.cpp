@@ -5,7 +5,7 @@
 int main()
 {
     std::cout << "char Test" << std::endl;
-    char ch1 = 'a', ch2 = 'z';
+    const char ch1 = 'a', ch2 = 'z';
     print_value(ch1, ch2);
 
     std::cout << std::endl << std::endl;
