@@ -55,15 +55,7 @@ public:
 	{
 		return this->c.crend();
 	}
-
-	/*
-	**  MutantStack& operator=(const MutantStack& m) = default;
-	**  MutantStack(void) = default;
-	**  MutantStack(const MutantStack& m) = default;
-	**  MutantStack(MutantStack&& m) = default;
-	**  ~MutantStack(void) = default;
-	*/
-
+	
 	// 생성자
 	MutantStack(void) {}
 
