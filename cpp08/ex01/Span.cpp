@@ -16,11 +16,10 @@ Span::~Span(void)
 
 void    Span::addNumber(int N)
 {
-	std::vector<int> &v = getSpan();
 	if (nowsize == length)
 		throw FullException();
-
-	for (int i = 0 ; i < v.size() ; ++i)
+	std::vector<int> &v = getSpan();
+	for (unsigned int i = 0 ; i < v.size() ; ++i)
 	{
 		if (N == v[i]) // 동일한 값이 존재하니? 
 			throw DuplicateException();
@@ -29,21 +28,21 @@ void    Span::addNumber(int N)
 	nowsize++;
 }
 
-template <typename T>
-void    Span::addNumbers(T start, T end)
+void    Span::addNumbers(std::vector<int>::iterator start, std::vector<int>::iterator end)
 {
 	std::vector<int> &v = getSpan();
-	for (typename T::iteraotr iter = start ; iter != end ; iter++)
+	for (std::vector<int>::iterator iter = start ; iter != end ; iter++)
 	{
-		if (nowsize + 1 == length)
+		if (nowsize + 1 > length)
 			throw FullException();
 		int nowValue = *iter;
-		for (int i = 0 ; i < nowsize ; ++i)
+		for (unsigned int i = 0 ; i < nowsize ; ++i)
 		{
 			if (v[i] == nowValue)
 				throw DuplicateException();
 		}
 		v.push_back(nowValue);
+		nowsize++;
 	}
 }
 
@@ -53,9 +52,11 @@ unsigned int Span::shortestSpan(void)
 	if (v.size() <= 2)
 		throw TooLowCountException();
 	std::sort(v.begin(), v.end());
-	for (int i = 0 ; i < v.size() - 1 ; ++i)
-		if (minValue > v[i + 1] - v[i])
+	for (unsigned int i = 0 ; i < v.size() - 1 ; ++i)
+	{
+		if (minValue > static_cast<unsigned int>(v[i + 1] - v[i]))
 			minValue = v[i + 1] - v[i];
+	}
 	return minValue;
 }
 
@@ -65,9 +66,7 @@ unsigned int Span::longestSpan(void)
 	if (v.size() <= 2)
 		throw TooLowCountException();
 	std::sort(v.begin(), v.end());
-	for (int i = 0 ; i < v.size() - 1 ; ++i)
-		if (maxValue < v[i + 1] - v[i])
-			maxValue = v[i + 1] - v[i];
+	maxValue = *(v.end() - 1) - *v.begin();
 	return maxValue;
 }
 
@@ -77,7 +76,7 @@ unsigned int Span::size(void)
 	return this->nowsize;
 }
 
-int	Span::getValue(int index)
+unsigned int	Span::getValue(unsigned int index)
 {
 	if (index >= nowsize)
 		throw OutBoundException();

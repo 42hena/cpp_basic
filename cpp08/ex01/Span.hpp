@@ -26,13 +26,12 @@ public:
 
 	// getter
 	unsigned int size(void);
-	int	getValue(int index);
+	unsigned int	getValue(unsigned int index);
 	std::vector<int>& getSpan(void);
 
 	// 멤버 함수
 	void	addNumber(int N);
-	template <typename T>
-	void	addNumbers(T start, T end);
+	void	addNumbers(std::vector<int>::iterator start, std::vector<int>::iterator end);
 
 	unsigned int shortestSpan(void);
 	unsigned int longestSpan(void);

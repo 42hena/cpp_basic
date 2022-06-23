@@ -6,24 +6,32 @@ int main()
 {
 
 	std::vector<int> a(10000);
-	
+
 	Span test(4);
 	srand(time(NULL));
-	// std::iterator iter = 
-	test.addNumber(5);
-	test.addNumber(4);
-	test.addNumber(3);
-	test.addNumber(2);
-
-	// a = new std::vector<int>(10000);
-	generate(a.begin(), a.end(), rand);
-	for (int i = 0 ; i < a.size() ; ++i)
+	try
 	{
-		std::cout << a[i] << ' ';
+		test.addNumber(1000);
+		test.addNumber(100000);
+		test.addNumber(10000);
+		test.addNumber(10);
+		test.addNumber(1); // error 발생
 	}
-	test.addNumbers(a.begin(), a.end());
-	for (int i = 0 ; i < test.size() ; ++i)
+	catch (const std::exception &e)
 	{
-		std::cout << test.getValue(i) << ' ';
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "[" << test.longestSpan() << ' ' << test.shortestSpan() << "]\n";
+
+	Span hundredThousand(10000);
+	generate(a.begin(), a.end(), rand);
+	try
+	{
+		hundredThousand.addNumbers(a.begin(), a.end());
+		std::cout << "[" << hundredThousand.longestSpan() << ' ' << hundredThousand.shortestSpan() << "]\n";
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 }
