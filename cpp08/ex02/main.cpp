@@ -32,7 +32,21 @@ void    myTest()
 	for (int i = 0 ; i < 100 ; ++i)
 		mstack.push(i);
 	std::cout << "now size: [" << mstack.size() << "]" << '\n';
-	std::cout << "top value: [" << mstack.top() << "]" << '\n';
+
+	MutantStack<int>::iterator start = mstack.begin();
+	MutantStack<int>::iterator end = mstack.end();
+
+	for (MutantStack<int>::iterator iter = start ; iter != end ; ++iter)
+	{
+		std::cout << "iter: [" << &*iter << "], value: [" << *iter << "]\n";
+	}
+
+	for (int i = 0 ; i < 100 ; ++i)
+	{
+		std::cout << "top value: [" << mstack.top() << "]" << '\n';
+		mstack.pop();
+		std::cout << "[mstack pop]" << '\n';
+	}
 }
 
 int main()
