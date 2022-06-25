@@ -24,7 +24,7 @@ void    pdfTest()
 	std::stack<int> s(mstack);
 }
 
-void    myTest()
+void    myIterTest()
 {
 	MutantStack<int> mstack;
 	if (!mstack.empty())
@@ -49,10 +49,35 @@ void    myTest()
 	}
 }
 
+void    myRIterTest()
+{
+	MutantStack<int> mstack;
+	if (!mstack.empty())
+		mstack.pop();
+	for (int i = 0 ; i < 100 ; ++i)
+		mstack.push(i);
+	std::cout << "now size: [" << mstack.size() << "]" << '\n';
+
+	MutantStack<int>::reverse_iterator start = mstack.rbegin();
+	MutantStack<int>::reverse_iterator end = mstack.rend();
+
+	for (MutantStack<int>::reverse_iterator iter = start ; iter != end ; ++iter)
+	{
+		std::cout << "reverse_iter: [" << &*iter << "], value: [" << *iter << "]\n";
+	}
+
+	for (int i = 0 ; i < 100 ; ++i)
+	{
+		std::cout << "top value: [" << mstack.top() << "]" << '\n';
+		mstack.pop();
+		std::cout << "[mstack pop]" << '\n';
+	}
+}
+
 int main()
 {
 	pdfTest();
-	myTest();
-	
+	myIterTest();
+	myRIterTest();
 	return 0;
 }
